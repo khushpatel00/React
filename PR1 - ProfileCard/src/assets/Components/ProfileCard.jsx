@@ -2,7 +2,7 @@ import { Card, CardHeader, CardBody, Image } from "@heroui/react";
 import TiltedCard from './TiltedCard.jsx';
 
 
-function ProfileCard({ name, role, imageUrl, linkedinUrl, githubUrl, discription  }) {
+function ProfileCard({ name, role, imageUrl, linkedinUrl, githubUrl, discription,mail  }) {
   return (
 
     <div>
@@ -29,6 +29,7 @@ function ProfileCard({ name, role, imageUrl, linkedinUrl, githubUrl, discription
                 <div className="flex gap-4 mt-2">
                   <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 ">LinkedIn</a>
                   <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="text-gray-800 ">GitHub</a>
+                  <a href={`mailto:${mail}`} target="_blank" rel="noopener noreferrer" className="text-gray-800 ">Mail</a>
                 </div>
                 <div>
                   <p className="text-white pt-30 text-lg">{discription}</p>
