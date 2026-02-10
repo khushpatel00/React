@@ -1,6 +1,66 @@
 .csm-read-more:hover{
-    background-color: crimson !important;
+    background-color: #e10914 !important;
+}
+*{
+    font-family: 'DM Sans', serif;
 }
 .csm-read-more{
     transition: 0.2s;
+}
+.csm-hover-tred{
+    transition: 0.2s;
+    &:hover{
+        color: #e10914
+    }
+}
+.csm-pointer{
+    cursor: pointer;
+}
+.csm-hover-bred{
+    transition: 0.2s;
+    &:hover{
+        background-color: #e10914 !important;
+        color: white !important;
+    }
+}
+.csm-breakline:not(:first-child){
+    position: relative;
+    &:after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: #e9e9e9 !important;
+        transform: translateY(-5px);
+    }
+}
+.csm-pill-animate:hover{
+    color: white !important;
+    border-color: #e10914;
+    &:after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #e10914 !important;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+}
+.csm-pill-animate{
+    transition: .3s;
+    &:after{
+        transition: 0.3s;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #e9e9e9 !important;
+        width: 0%;
+        height: 100%;
+        z-index: -1;
+    }
 }

@@ -10,7 +10,8 @@ function App() {
             width: '95vw',
             position: 'sticky',
             top: 0,
-            backgroundColor: '#e0e7ef',
+            zIndex: 9999,
+            backgroundColor: 'transparent',
             borderRadius: '0 0 40px 40px'
         }} className='mx-auto'>  
             
