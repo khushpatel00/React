@@ -1,0 +1,6 @@
+.csm-read-more:hover{
+    background-color: crimson !important;
+}
+.csm-read-more{
+    transition: 0.2s;
+}

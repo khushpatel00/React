@@ -7,12 +7,12 @@ function App() {
         {/* header placeholder */}
         <div style={{ 
             height: '108px',
-            width: '100vw',
+            width: '95vw',
             position: 'sticky',
             top: 0,
             backgroundColor: '#e0e7ef',
             borderRadius: '0 0 40px 40px'
-        }}> 
+        }} className='mx-auto'>  
             
         </div>
       <Blog />
