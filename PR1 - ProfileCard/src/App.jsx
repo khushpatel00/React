@@ -25,8 +25,7 @@ function App() {
             githubUrl: 'https://github/com/khushpatel00',
             mail: ''
         },
-    ]);
-  console.log(data);
+    ]); 
 
   return (
     <div className=''>
@@ -46,8 +45,7 @@ function App() {
         <div className="absolute top-0 right-0 sm:right-0 md:right-0 lg:right-0 -translate-1/2">
           <img className='w-32 h-32 rotate-45 translate-y-1/4' src="/arrow (1).png" alt="" srcSet="" />
           <p className='relative -translate-y-full translate-x-1/5 -rotate-3'>Hover Here</p>
-        </div>
-      {console.log(data)}
+        </div> 
 
       </div>
     </div>
