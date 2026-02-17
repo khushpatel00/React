@@ -1,15 +1,23 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import AddCard from './assets/Components/AddCard.jsx'
+import EditCard from './assets/Components/EditCard.jsx'
 import PlaceholderContent from './assets/Components/PlaceholderContent.jsx'
 import ProfileCard from './assets/Components/ProfileCard.jsx'
 import { useEffect } from 'react';
 
 
 function App() {
-
+  const [isEdit, setIsEdit] = useState(false)
   const [data, setData] = useState(JSON.parse(sessionStorage.getItem('employeeCardData')));
-
-  const editEmployee = () => { }
+  const [editData, setEditData] = useState({});
+  const titleRef = useRef(null);
+  const editEmployee = (index) => {
+    setEditData({
+      ...data[index],
+      index: index,
+    })
+    setIsEdit(true);
+  }
   const deleteEmployee = (index) => {
     let tempData = [...data]
     tempData.splice(index, 1)
@@ -18,8 +26,7 @@ function App() {
 
   useEffect(() => {
     if (!sessionStorage.getItem('employeeCardData') || sessionStorage.getItem('employeeCardData') == '[]' || sessionStorage.getItem('employeeCardData') == 'null') {// if session is empty
-      console.log(sessionStorage.getItem('employeeCardData'))
-      setData([
+        setData([
         {
           name: 'Khush',
           role: 'Frontend Developer',
@@ -32,7 +39,7 @@ function App() {
         {
           name: 'Placeholder',
           role: 'Game Developer',
-          imageUrl: 'https://picsum.photos/seed/picsum/536/354',
+          imageUrl: 'https://picsum.photos/500/500',
           linkedinUrl: 'https://Linkedin/in/khushpatel00',
           githubUrl: 'https://github/com/khushpatel00',
           mail: ''
@@ -44,6 +51,7 @@ function App() {
 
   useEffect(() => { // update session on data change
     sessionStorage.setItem('employeeCardData', JSON.stringify(data))
+    console.log(data)
   }, [data])
 
 
@@ -51,15 +59,29 @@ function App() {
 
   return (
     <div className=''>
-      <h1 className='mt-5 font-light text-center text-5xl'>Employee Card</h1>
+      <h1 className='mt-5 font-light text-center text-5xl' ref={titleRef}>{isEdit ? 'Edit Employee Card' : 'Employee Card'}</h1>
       <div className="profile-cards mt-5">
-        <AddCard setData={setData} />
+        {isEdit ? <EditCard data={data} setData={setData} editData={editData} setIsEdit={setIsEdit} /> :
+          <AddCard setData={setData} />
+        }
+
       </div>
 
 
       <div className='flex relative flex-wrap max-w-8/12 mx-auto justify-center mt-10 gap-10 showData'>
         {data?.map((item, index) => (
-          <ProfileCard key={index} name={item.name} role={item.role} imageUrl={item.imageUrl} linkedinUrl={item.linkedinUrl} githubUrl={item.githubUrl} discription={item.discription} mail={item.mail} action={{ editEmployee, deleteEmployee }} index={index} />
+          <ProfileCard
+            key={index}
+            name={item.name}
+            role={item.role}
+            imageUrl={item.imageUrl}
+            linkedinUrl={item.linkedinUrl}
+            githubUrl={item.githubUrl}
+            discription={item.discription}
+            mail={item.mail}
+            action={{ editEmployee, deleteEmployee }}
+            index={index}
+          />
         ))}
 
       </div>

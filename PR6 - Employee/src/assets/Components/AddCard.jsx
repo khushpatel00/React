@@ -23,7 +23,6 @@ function AddCard({ setData }) {
             };
             if (object.name == '' || object.role == '') {
                 return;
-                // due to strictmode, data arrives 2 time, creating empty cards
             }
 
 
@@ -34,7 +33,6 @@ function AddCard({ setData }) {
             setData(sessionCardObject);
             e.target.reset();
         });
-        //fallback to update data on mount, do not touch, {maind maind fix kairu che}
         setData(sessionStorage.getItem('employeeCardData') ? JSON.parse(sessionStorage.getItem('employeeCardData')) : []);
     }, []);
 
