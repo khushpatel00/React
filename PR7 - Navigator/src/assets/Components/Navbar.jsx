@@ -4,7 +4,7 @@ function Navbar() {
     return (
         <nav className="sticky w-full z-20 top-0 start-0 border-b border-default bg-white">
             <div className="max-w-7xl flex flex-wrap items-center mx-auto p-4">
-                <a href="https://flowbite.com/" className="flex items-center justify-center space-x-3 rtl:space-x-reverse">
+                <a href="/" className="flex items-center justify-center space-x-3 rtl:space-x-reverse">
                     <img src="https://cdn.zeptonow.com/web-static-assets-prod/artifacts/14.18.2/images/header/primary-logo.svg" className="h-7" alt="Flowbite Logo" />
                 </a>
                 <div className="flex items-center order-1 grow">

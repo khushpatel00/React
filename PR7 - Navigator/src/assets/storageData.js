@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import addProduct from "./Components/AddProduct.jsx";
 
 export const fetchData = () => {
@@ -16,4 +17,11 @@ export const pushData = (data) => {
         console.log(e);
         return false;
     }
+}
+export const deleteKey = (i, setProduct) => {
+    let data = fetchData();
+    data.splice(i, 1);
+    // console.log(data)
+    localStorage.setItem('zepto_products', JSON.stringify(data));
+    setProduct(fetchData());
 }
