@@ -11,6 +11,7 @@ const AddProduct = () => {
             description: e.target.description.value,
             price: e.target.price.value,
             imagePath: e.target.imagePath.value,
+            stock: e.target.stock.value,
         }
         let response = pushData(data)
         if(response === true) navigator('/');
@@ -32,6 +33,11 @@ const AddProduct = () => {
                 <div className={'flex flex-row justify-between '}>
                     <label htmlFor={'price'} className={'text-3xl'}>Price: </label>
                     <input type="number" name={'price'} id={'price'}
+                           className={'bg-zinc-200 rounded-lg px-5 py-3 text-2xl'}/>
+                </div>
+                <div className={'flex flex-row justify-between '}>
+                    <label htmlFor={'stock'} className={'text-3xl'}>Stock: </label>
+                    <input type="number" name={'stock'} id={'stock'}
                            className={'bg-zinc-200 rounded-lg px-5 py-3 text-2xl'}/>
                 </div>
                 <div className={'flex flex-row justify-between '}>
