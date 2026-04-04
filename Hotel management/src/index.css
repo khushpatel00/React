@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+.bricolage-grotesque{
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+:root {
+    --bg-soft: #f6f6f6;
+    --surface: #ffffff;
+    --muted: #6b7280;
+    --muted-2: #9ca3af;
+    --accent-strong: #111827;
+    --soft-success: #ecfdf5;
+    --soft-warning: #fffbeb;
+    --soft-danger: #fff1f2;
+}
+
+html,
+body,
+#root {
+    height: 100%;
+}
+
+body {
+    background-color: var(--bg-soft);
+    color: var(--accent-strong);
+}
